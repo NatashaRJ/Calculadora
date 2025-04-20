@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title class="ion-text-center">Sobre</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-grid class="ion-align-items-center">
+    <ion-row class="ion-align-items-center">
+      <!-- Coluna esquerda -->
+      <ion-col size="12" size-md="3" class="ion-text-start">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Informações</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="texto-card">
+              <p><strong>Turma:</strong> Desenvolvimento Móvel</p>
+              <p><strong>Unidade:</strong> BS</p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+
+      <!-- Imagem central -->
+      <ion-col size="12" size-md="6">
+        <div class="imagem-centro">
+          <ion-img
+            src="assets/calculadora.jpg"
+            style="max-width: 180px; border-radius: 8px"
+          ></ion-img>
+        </div>
+      </ion-col>
+
+      <!-- Coluna direita -->
+      <ion-col size="12" size-md="3" class="ion-text-end">
+        <ion-card>
+          <ion-card-header>
+            <ion-card-subtitle>Responsável</ion-card-subtitle>
+          </ion-card-header>
+          <ion-card-content>
+            <div class="texto-card">
+              <p><strong>Professor:</strong></p>
+              <p>Artur</p>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-button routerLink="/home">Voltar</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>

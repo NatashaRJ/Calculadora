@@ -1,0 +1,125 @@
+
+
+    /* Página Sobre - Estilo com efeito 3D e animação */
+
+ion-card {
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    border-radius: 16px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
+  }
+  
+  ion-card:hover {
+    transform: rotateY(8deg) rotateX(3deg);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  }
+  
+  /* Animação no texto */
+  ion-card-subtitle, ion-card-content p {
+    animation: textoAnimado 1.5s ease-in-out forwards;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 500;
+
+  }
+  
+  /* Texto centralizado e animado */
+  .ion-text-center, .imagem-centro {
+    text-align: center;
+    animation: fadeInUp 1.2s ease;
+  }
+  
+  /* Centraliza imagem com padding */
+  .imagem-centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Animações */
+  @keyframes textoAnimado {
+    from {
+      opacity: 0;
+      transform: translateY(15px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(25px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .texto-card {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .texto-card p {
+    margin: 6px 0;
+    transition: transform 0.3s ease;
+  }
+  
+  .texto-card p:hover {
+    transform: scale(1.05);
+  }
+  
+  ion-card-subtitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #0077ff;
+    font-family: 'Orbitron', sans-serif;
+    animation: pulseGlow 2s ease-in-out infinite;
+    text-shadow: 0 0 6px #0077ff;
+  }
+
+  
+  @keyframes pulseGlow {
+    0% {
+      text-shadow: 0 0 6px #0077ff;
+    }
+    50% {
+      text-shadow: 0 0 15px #00ffff;
+    }
+    100% {
+      text-shadow: 0 0 6px #0077ff;
+    }
+  }
+
+.ion-text-center {
+background-color: red;
+}
+
+ion-button {
+  background-color:rgb(92, 154, 224);
+  color: red;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 119, 255, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 12px 20px;
+}
+
+ion-button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(15, 188, 235, 0.95);
+}

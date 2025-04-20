@@ -1,0 +1,9 @@
+<ion-grid>
+  <ion-row *ngFor="let linha of botoes">
+    <ion-col size="3" *ngFor="let botao of linha">
+      <ion-button expand="block" (click)="clicar(botao)">
+        {{ botao }}
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>

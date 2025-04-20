@@ -1,20 +1,88 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-title class="titulo-animado">Calculadora</ion-title>
+    <ion-buttons slot="end">
+      <ion-button color="light" [routerLink]="['/sobre']">Sobre</ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content>
+  <!-- Visor -->
+  <div class="visor">
+    {{ expressao }}
   </div>
+
+ <!-- Teclado digital -->
+<div class="teclado">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3" *ngFor="let tecla of ['7','8','9','/']">
+        <ion-button expand="round" class="tecla-digital" (click)="processarTecla(tecla)">
+          {{ tecla }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3" *ngFor="let tecla of ['4','5','6','*']">
+        <ion-button expand="round" class="tecla-digital" (click)="processarTecla(tecla)">
+          {{ tecla }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3" *ngFor="let tecla of ['1','2','3','-']">
+        <ion-button expand="round" class="tecla-digital" (click)="processarTecla(tecla)">
+          {{ tecla }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3" *ngFor="let tecla of ['0','.','=','+']">
+        <ion-button expand="round" class="tecla-digital" (click)="processarTecla(tecla)">
+          {{ tecla }}
+        </ion-button>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3">
+        <ion-button expand="round" class="tecla-digital" (click)="processarTecla('%')">
+          %
+        </ion-button>
+      </ion-col>
+      <ion-col size="9">
+        <ion-button expand="block" color="medium" class="botao-animado" (click)="processarTecla('CE')">
+          CE
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</div>
+
+
+  <!-- Histórico -->
+  <ion-card *ngIf="historico.length > 0" color="light" class="card-historico">
+    <ion-card-header class="cabecalho-historico">
+      <ion-card-title class="historico-animado titulo-centralizado">Histórico</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let item of historico">
+          {{ item.expressao }} = {{ item.resultado }}
+        </ion-item>
+      </ion-list>
+      <ion-button expand="block" color="danger" (click)="limparHistorico()" class="botao-animado">
+        Limpar Histórico
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar color="primary" class="footer-centralizado">
+    <ion-buttons>
+      <ion-button color="light" class="footer" routerLink="/sobre">Sobre</ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-footer>
+
